@@ -24,6 +24,7 @@ public class Tandidocument implements Serializable {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 
+//	@Temporal(TemporalType.TIMESTAMP)
 	private Timestamp creationdate;
 	
 	private Timestamp lastmodifieddate;
@@ -50,7 +51,25 @@ public class Tandidocument implements Serializable {
 
 	}
 	
-	public Tandidocument(Timestamp creationdate, File data, String description) throws IOException {
+	/*public Tandidocument(Timestamp creationdate, byte[] data,
+			String description, String name, String path, String version,
+			Propietary propietary) {
+
+		this.creationdate = creationdate;
+		this.data = data;
+		this.description = description;
+		this.name = name;
+		this.path = path;
+		this.version = version;
+		this.propietary = propietary;
+	}*/
+	
+	public Tandidocument(Timestamp creationdate, File data,
+			String description
+			//, String name
+			//, String version
+			//, Propietary propietary
+			) throws IOException {
 
 		this.creationdate = creationdate;
 		this.lastmodifieddate = longAsTimestamp(data.lastModified());
@@ -60,6 +79,7 @@ public class Tandidocument implements Serializable {
 		this.path = data.getPath();
 		this.version = 1;
 		this.hashcode = hashCode();
+		//this.propietary = propietary;
 	}
 
 	public int getId() {
