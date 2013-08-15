@@ -31,17 +31,13 @@ public class Propietary implements Serializable {
 	private List<Tandidocument> tandidocuments;
 
 	public Propietary() {
-		
 	}
 	
-	public Propietary(String name, String reference, String type
-			//,List<Tandidocument> tandidocuments
-			) {
+	public Propietary(String name, String reference, String type) {
 
 		this.name = name;
 		this.reference = reference;
 		this.type = type;
-		//this.tandidocuments = tandidocuments;
 	}
 
 	public int getId() {
