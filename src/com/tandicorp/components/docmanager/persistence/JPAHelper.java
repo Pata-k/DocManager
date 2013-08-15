@@ -7,10 +7,11 @@ import javax.persistence.Persistence;
 public class JPAHelper {
 	
 	EntityManagerFactory emf;
+	EntityManager em;
 	
 	public EntityManager buildEntityManager(){
 		emf = Persistence.createEntityManagerFactory("DocManager");
-		return emf.createEntityManager();
+		em =  emf.createEntityManager();
+		return em;
 	}
-
 }
